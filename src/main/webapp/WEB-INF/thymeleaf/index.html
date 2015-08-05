@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>KWorkStation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <h1>Welcome to KWorkStation!</h1>
+        <hr/>
+        <a href="/kworkstation/stsm/seedstartermng" th:text="#{seedstarter.title.application}" th:href="@{/stsm/seedstartermng}">STSM</a>
+        <h1 th:text="${@indexController.log(@indexController)}">Welcome to KWorkStation!</h1>
+    </body>
+</html>
+

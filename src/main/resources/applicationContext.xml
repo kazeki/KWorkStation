@@ -63,102 +63,12 @@
         <property name="basePackage" value="com.kzk.kworkstation.mappers" />
     </bean>
     
-    <!-- 文件上传服务 -->
-    <bean class="com.kzk.kworkstation.service.UploadFileConfigService" lazy-init="true">
-    	<property name="saveDir" value="${fileupload.saveDir}" />
-    	<property name="applyExpertPhotoFileExts" value="jpeg,jpg,bmp,png" />
-    	<!-- 申报信息中富文本图片的上传格式 -->
-    	<property name="applyEditorImageFileExt" value="jpeg,jpg" />
-    	<!-- 申报信息中富文本图片的图片大小限制 -->
-    	<property name="applyEditorImageSize" value="1048576" />
-    	<!-- 申报信息中富文本图片的图片数量限制 -->
-    	<property name="applyEditorImageCount" value="20"></property>
-    </bean>
     
-    <!-- 报表打印服务 -->
-    <bean name="reportService" class="ssi.framework.pdf.PdfReportService" >
-        <property name="templateDir" value="WEB-INF/pdf/template" />
-        <property name="outputDir" value="WEB-INF/pdf/output" />
-        <property name="fontFileName" value="WEB-INF/pdf/font/simsun.ttc" />
-        <property name="keepHtmlFile" value="true" />
-    </bean>
-    
-    <!-- Excel导出服务 -->
-    <bean class="com.kzk.kworkstation.export.ExcelExportService" lazy-init="true">
-        <property name="templateDir" value="WEB-INF/config/template/excel" />
-        <property name="outputDir" value="WEB-INF/output/excel" />
-    </bean>
-    
-    <!-- CSV导出服务 -->
-    <bean class="com.kzk.kworkstation.export.CsvExportService" lazy-init="true">
-        <property name="configDir" value="WEB-INF/config/csv" />
-        <property name="outputDir" value="WEB-INF/output/csv" />
-        <property name="exportEncoding" value="GBK" />
-    </bean>
-    
-    <!-- CSV导入服务 -->
-    <bean class="com.kzk.kworkstation.service.CsvImportService" lazy-init="true">
-        <property name="configDir" value="WEB-INF/config/csv" />
-        <property name="importEncoding" value="GBK" />
-    </bean>
-    
-    <!-- 申报信息上报前的检查 -->
-    <bean class="com.kzk.kworkstation.service.ApplyCheckService" lazy-init="true" >
-		<property name="configFilePath" value="WEB-INF/config/applyperson_check.csv" />
-    </bean>
-    
-    <bean class="ssi.framework.spring.SpringHelper" />
-    
-    <!-- 服务启动时的处理 -->
-    <bean class="com.kzk.kworkstation.service.StartupService" />
-    
-    <!-- 账户辅助服务（生成随机密码、验证用户名） -->
-    <bean class="com.kzk.kworkstation.service.AccountHelperService" lazy-init="true">
-    	<property name="passwordMinLength" value="6" />
-    	<property name="badPasswordFile" value="WEB-INF/config/bad_passwords.txt" />
-    	<property name="reservedUsernameFile" value="WEB-INF/config/reserved_usernames.txt" />
-    </bean>
     
     <!-- 登录页面的显示类容服务 -->
-    <bean class="com.kzk.kworkstation.service.IndexContentService" lazy-init="true">
+    <!-- <bean class="com.kzk.kworkstation.service.IndexContentService" lazy-init="true">
     	<property name="contentFile" value="WEB-INF/config/index_content.txt" />
-    </bean>
+    </bean> -->
     
-	<!-- 短信服务 -->
-    <bean class="com.kzk.kworkstation.service.SmsService" lazy-init="true">
-    </bean>
-    
-    <!-- 邮件服务 -->
-    <bean class="com.kzk.kworkstation.service.EmailService" lazy-init="true">
-    </bean>
-    
-    <!-- 登录页面的显示类容服务 -->
-    <bean class="com.kzk.kworkstation.service.ListRowCountService" lazy-init="true">
-    	<property name="configFile" value="WEB-INF/config/list_row_count.csv" />
-    </bean>
-    
-    <!-- 牵头单位设置（对应人才类型和申报口子对应的牵头单位） -->
-    <bean class="com.kzk.kworkstation.service.LeaderOrgConfigService" lazy-init="true">
-    	<property name="configFile" value="WEB-INF/config/牵头单位设置.csv" />
-    </bean>
-    
-    <!-- 申报口子取得scoreCategory服务 -->
-    <bean class="com.kzk.kworkstation.service.ApplyRoute2ScoreCategoryService" lazy-init="true">
-    </bean>
-    
-    <!-- 权限服务 -->
-    <bean class="com.kzk.kworkstation.service.A3PermissionService" lazy-init="true">
-    	<property name="expertPermissions" value="create edit detail stat" />
-    </bean>
-    <bean class="com.kzk.kworkstation.service.A4PermissionService" lazy-init="true">
-    	<property name="expertPermissions" value="edit detail" />
-    </bean>
-    
-    <!-- 图片缩放服务 -->
-    <bean class="com.kzk.kworkstation.service.ImageResizeService">
-    	<property name="resizeCommand" value="${imageresize.command}" />
-    </bean>
-    
-    <!-- ID连续编号 -->
-    <bean class="com.kzk.kworkstation.utils.SequenceHelper" />
+	
 </beans>

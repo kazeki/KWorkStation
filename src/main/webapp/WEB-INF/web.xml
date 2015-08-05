@@ -45,7 +45,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>
-		<url-pattern>/springmvc/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 字符编码过滤器 -->
@@ -63,7 +63,7 @@
 	</filter-mapping>
 
     <!-- kaptcha 验证码组件-->
-    <servlet>
+    <!-- <servlet>
         <servlet-name>Kaptcha</servlet-name>
         <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
         <init-param>
@@ -94,7 +94,7 @@
     <servlet-mapping>
         <servlet-name>Kaptcha</servlet-name>
         <url-pattern>/kaptcha/captcha.jpg</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
         
     <session-config>
         <session-timeout>60</session-timeout>
